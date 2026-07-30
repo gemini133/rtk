@@ -14,6 +14,18 @@ pub const CLAUDE_HOOK_COMMAND: &str = "rtk hook claude";
 pub const CURSOR_HOOK_COMMAND: &str = "rtk hook cursor";
 /// Native Rust hook command for Factory Droid.
 pub const DROID_HOOK_COMMAND: &str = "rtk hook droid";
+/// Native Rust hook command for Codex CLI PreToolUse.
+pub const CODEX_HOOK_COMMAND: &str = "rtk hook codex";
+/// Codex hook config file ($CODEX_HOME/hooks.json). Codex also accepts
+/// inline `[[hooks]]` tables in config.toml; RTK writes the dedicated
+/// JSON file to avoid clobbering user-managed config.toml content.
+pub const CODEX_HOOKS_JSON: &str = "hooks.json";
+/// Marker field RTK writes inside each hook entry it owns. Lets uninstall
+/// identify RTK-managed entries even if the user has edited the command
+/// path (e.g. moved the rtk binary). Underscore-prefix prevents clash
+/// with reserved Codex schema field names.
+pub const CODEX_HOOK_RTK_MARKER: &str = "_rtk_managed";
+>>>>>>> 7ef6ede (feat(codex): add native PreToolUse hook handler + install/uninstall flow)
 
 pub const CONFIG_DIR: &str = ".config";
 pub const OPENCODE_SUBDIR: &str = "opencode";
