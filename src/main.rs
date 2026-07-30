@@ -2436,7 +2436,6 @@ fn run_cli() -> Result<i32> {
                 hooks::hook_cmd::run_copilot()?;
                 0
             }
-<<<<<<< HEAD
             HookCommands::Droid => {
                 hooks::hook_cmd::run_droid()?;
                 0
