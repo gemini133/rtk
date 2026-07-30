@@ -864,14 +864,10 @@ enum HookCommands {
     Gemini,
     /// Process Copilot preToolUse hook (VS Code + Copilot CLI, reads JSON from stdin)
     Copilot,
-<<<<<<< HEAD
     /// Process Factory Droid PreToolUse hook (reads JSON from stdin)
     Droid,
-||||||| parent of 7ef6ede (feat(codex): add native PreToolUse hook handler + install/uninstall flow)
-=======
     /// Process Codex CLI PreToolUse hook (reads JSON from stdin)
     Codex,
->>>>>>> 7ef6ede (feat(codex): add native PreToolUse hook handler + install/uninstall flow)
     /// Check how a command would be rewritten by the hook engine (dry-run)
     Check {
         /// Target agent
@@ -2445,13 +2441,10 @@ fn run_cli() -> Result<i32> {
                 hooks::hook_cmd::run_droid()?;
                 0
             }
-||||||| parent of 7ef6ede (feat(codex): add native PreToolUse hook handler + install/uninstall flow)
-=======
             HookCommands::Codex => {
                 hooks::hook_cmd::run_codex()?;
                 0
             }
->>>>>>> 7ef6ede (feat(codex): add native PreToolUse hook handler + install/uninstall flow)
             HookCommands::Check { agent: _, command } => {
                 use crate::discover::registry::rewrite_command;
                 let raw = command.join(" ");
